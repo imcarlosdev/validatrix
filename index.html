@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+	<title>Validatrix Form Validation Script</title>
+	
+	<!-- jQuery 1.11.2 -->
+	<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+	<!-- Bootstrap 3.3.1 -->
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+	<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
+
+	<!-- Validatrix -->
+	<link rel="stylesheet" href="validatrix/validatrix.css">
+	<script src="validatrix/validatrix.js"></script>
+	
+	<script>
+	    $(function(){
+	        $("#submit-form").click(function(){
+	        	if( validatrix() ){
+	        		alert("Submit Form");
+
+	        	}else{
+	        		console.log("Some fields are required");
+	        	}
+	        	return false; //Prevent form submition
+	        });
+	    });
+	</script>
+
+</head>
+<body>
+	<div class="container">
+	    <div class="row">
+	        <div class="col-md-6">
+	      		
+	      		<h1>Validatrix is a simple lightweight form validation script</h1>
+	      		<p>Just include the script & css and add the class <span class="label label-default">.required</span> to your required fields and paste the init code and that's all, just 4kb.</p>
+				
+				<a href="https://github.com/choquo/validatrix/archive/master.zip" class="btn btn-success">Download script</a> 
+				<a href="https://github.com/choquo/validatrix" class="btn btn-default">View on Github</a>
+	      		
+	      		<h4>How to use</h4>
+	      		<p>Include the validatrix script, the script requires jQuery</p>
+				<code>
+				&lt;!-- jQuery --&gt;<br>
+				&lt;script src=&quot;//code.jquery.com/jquery-1.11.2.min.js&quot;&gt;&lt;/script&gt;<br>
+				&lt;!-- Validatrix --&gt;<br>
+				&lt;link rel=&quot;stylesheet&quot; href=&quot;validatrix/validatrix.css&quot;&gt;<br>
+				&lt;script src=&quot;validatrix/validatrix.js&quot;&gt;&lt;/script&gt;<br>
+
+				&lt;script&gt;<br>
+				$(function(){<br>
+				&nbsp;&nbsp;&nbsp;$(&quot;#submit-form&quot;).click(function(){<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if( validatrix() ){<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;alert(&quot;Submit Form&quot;);<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}else{<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log(&quot;Some fields are required&quot;);<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+				&nbsp;&nbsp;&nbsp;return false; //Prevent form submition<br>
+				&nbsp;&nbsp;&nbsp;});<br>
+				});<br>
+				&lt;/script&gt;
+				</code>
+
+	      		<h4>Custom warnings</h4>
+	      		<p>You can edit the warning values in the file <span class="label label-default">validatrix.js</span></p>
+				<code>
+				var warnings = {<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;text : '*This text field is required',<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;textarea: '*This textarea is required',<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;select: '*Select an option',<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;radio: '*Select a radio option',<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;checkbox: '*Check one option'<br>
+				};
+				</code>
+	        </div>
+
+
+			<div class="col-md-6" style="padding-top:30px;">
+				
+				<!-- FORM -->
+				<form id="contact-form">
+					<div class="form-group">
+						<input type="text" name="name" id="name" class="form-control required" placeholder="Name">
+					</div>
+					<div class="form-group">
+						<input type="text" name="email" id="email" class="form-control required" placeholder="Email">
+					</div>
+						
+					<div class="form-group">
+						<label>
+						<input type="radio" name="fruit" class="required"> Kiwi
+						</label>
+						<label>
+						<input type="radio" name="fruit" class="required"> Mango
+						</label>
+					</div>
+					<div class="form-group">
+						<label>
+						<input type="checkbox" name="instrument" class="required"> Guitar
+						</label>
+						<label>
+						<input type="checkbox" name="instrument" class="required"> Drums
+						</label>
+					</div>
+					<div class="form-group">
+						<select name="age" class="required">
+							<option value="">-- Select an option ---</option>
+							<option value="10">10</option>
+							<option value="11">11</option>
+							<option value="12">12</option>
+						</select>
+					</div>
+
+					<div class="form-group">
+						<input type="text" name="subjet" id="subjet" class="form-control" placeholder="Subject">
+					</div>
+					<div class="form-group">
+						<textarea name="message" id="message" class="form-control required" placeholder="Write a message" rows="7"></textarea>
+					</div>
+					<button id="submit-form">Send message</button>
+				</form>
+				<!-- END FORM -->
+
+	        </div>
+
+
+	    </div>
+	</div>
+	<br>
+	<br>
+	<br>
+	<br>
+</body>
+</html>

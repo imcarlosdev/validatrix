@@ -5,7 +5,7 @@ Just include the script & css and add the class `.required` to your required fie
 **[View Demo](http://develus.com/github/validatrix)**
 
 ##How to use
-Add class to your required fields
+Add class `.required` to your required fields
     
 	<input class="required" name="" />
 

@@ -30,6 +30,38 @@ Include the validatrix script, the script requires jQuery
 	});
 	</script> 
 
+####HTML Form layout example - IMPORTANT:
+You need wrap every form element with a `<div>` tag for a good performance.
+The script (for now) only works with this specific form layout:
+	
+	<form>
+		<!-- text -->
+		<div>
+			<input type="text" class="required">
+		</div>
+		
+		<!-- select -->
+		<div>
+			<select class="required">
+				<option>option 1</option>
+				<option>option 2</option>
+			</select>
+		</div>
+
+		<!-- radios & checkboxes -->
+		<div>
+			<label>
+				<input type="radio" /> Option 1
+			</label>
+			<label>
+				<input type="radio" /> Option 2
+			</label>
+		</div>
+		<!-- ... -->
+	</form>
+
+
+
 ###Custom warnings
 
 You can edit the warning values in the file `validatrix.js`
@@ -40,6 +72,4 @@ You can edit the warning values in the file `validatrix.js`
 	  select: '*Select an option',
       radio: '*Select a radio option',
 	  checkbox: '*Check one option'
-	}; 
-
- 
+	};

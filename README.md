@@ -1,6 +1,6 @@
 #Validatrix 
 ####A simple lightweight form validation script
-Just include the script & css and add the class `.required` to your required fields that's all, just 4kb.
+Just include the script & css and add the class `.required` to your required fields that's all, just 2kb.
 
 **[View Demo](http://develus.com/github/validatrix)**
 

@@ -4,6 +4,8 @@ Just include the script & css and add the class `.required` to your required fie
 
 **[View Demo](http://develus.com/github/validatrix)**
 
+![](http://develus.com/github/validatrix/img/capture.png)
+
 ##How to use
 Add class `.required` to your required fields
     

@@ -32,13 +32,13 @@ function validatrix(){
 			validate = false;
 		}
 
-		//select devuelve (select-one o select-multiple)
+		//select return (select-one or select-multiple)
 		if( myself.prop("type").toLowerCase() === 'select-one' && $(myself,"option:selected").val()==='' ){
 			myself.after('<div class="required-label">'+warnings.select+'</div>').addClass('required-active');
 			validate = false;
 		}
 
-		//select devuelve (select-one o select-multiple)
+		//select return (select-one or select-multiple)
 		if( myself.prop("type").toLowerCase() === 'select-multiple' && $(myself,"option:selected").val()==='' ){
 			myself.after('<div class="required-label">'+warnings.select+'</div>').addClass('required-active');
 			validate = false;
@@ -48,8 +48,7 @@ function validatrix(){
 		if( myself.prop("type").toLowerCase() === 'radio' ){
 			//find radio family
 			var radio_family_name = $(myself).attr('name');
-			//<label> <input> label_string </label> [INSERT WARNING HERE]
-
+			//Format as: <label> <input> label_string </label> [INSERT WARNING HERE]
 			if( $("input[name="+radio_family_name+"]").is(":checked") ){
 
 			}else{
@@ -65,7 +64,7 @@ function validatrix(){
 		if( myself.prop("type").toLowerCase() === 'checkbox' ){
 			//find radio family
 			var checkbox_family_name = $(myself).attr('name');
-			//<label> <input> label_string </label> [INSERT WARNING HERE]
+			//Format as: <label> <input> label_string </label> [INSERT WARNING HERE]
 			if( $("input[name="+checkbox_family_name+"]").is(":checked") ){
 
 			}else{
@@ -80,7 +79,6 @@ function validatrix(){
 	});
 	
 	if( validate ){
-		//Submit
 		return true;
 	}else{
 		return false;

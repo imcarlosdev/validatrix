@@ -51,10 +51,10 @@ The script (for now) only works with this specific form layout:
 		<!-- radios & checkboxes -->
 		<div>
 			<label>
-				<input type="radio" /> Option 1
+				<input type="radio" class="required" /> Option 1
 			</label>
 			<label>
-				<input type="radio" /> Option 2
+				<input type="radio" class="required" /> Option 2
 			</label>
 		</div>
 		<!-- ... -->

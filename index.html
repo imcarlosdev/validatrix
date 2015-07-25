@@ -3,17 +3,15 @@
 <head>
     <meta charset="UTF-8">
 	<title>Validatrix Form Validation Script</title>
-	
-	<!-- jQuery 1.11.2 -->
 	<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
-	<!-- Bootstrap 3.3.1 -->
 	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
-	<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
+	<link rel="stylesheet" href="assets/prism/prism-okaida.css">
+	<script src="assets/prism/prism.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 
 	<!-- Validatrix -->
 	<link rel="stylesheet" href="validatrix/validatrix.css">
 	<script src="validatrix/validatrix.min.js"></script>
-	
 	<script>
 	    $(function(){
 	        $("#submit-form").click(function(){
@@ -37,77 +35,78 @@
 	      		<h1>Validatrix is a simple lightweight form validation script</h1>
 	      		<p>Just include the script & css and add the class <span class="label label-default">.required</span> to your required fields and paste the init code and that's all, just 2kb.</p>
 				
-				<a href="https://github.com/choquo/validatrix/archive/master.zip" class="btn btn-success">Download script</a> 
-				<a href="https://github.com/choquo/validatrix" class="btn btn-default">View on Github</a>
+				<a href="https://github.com/choquo/validatrix/archive/master.zip" class="btn btn-success"> <i class="fa fa-cloud-download"></i> Download script</a> 
+				<a href="https://github.com/choquo/validatrix" class="btn btn-default"> <i class="fa fa-github"></i> View on Github</a>
 	      		
-	      		<h4>How to use</h4>
+	      		<h3>How to use</h3>
 	      		<p>Include the validatrix script, the script requires jQuery</p>
-				<code>
-				&lt;!-- jQuery --&gt;<br>
-				&lt;script src=&quot;//code.jquery.com/jquery-1.11.2.min.js&quot;&gt;&lt;/script&gt;<br>
-				&lt;!-- Validatrix --&gt;<br>
-				&lt;link rel=&quot;stylesheet&quot; href=&quot;validatrix/validatrix.css&quot;&gt;<br>
-				&lt;script src=&quot;validatrix/validatrix.js&quot;&gt;&lt;/script&gt;<br>
+				<pre><code class="language-php">
+				&lt;!-- jQuery --&gt;
+				&lt;script src=&quot;//code.jquery.com/jquery-1.11.2.min.js&quot;&gt;&lt;/script&gt;
+				&lt;!-- Validatrix --&gt;
+				&lt;link rel=&quot;stylesheet&quot; href=&quot;validatrix/validatrix.css&quot;&gt;
+				&lt;script src=&quot;validatrix/validatrix.js&quot;&gt;&lt;/script&gt;
 
-				&lt;script&gt;<br>
-				$(function(){<br>
-				&nbsp;&nbsp;&nbsp;$(&quot;#submit-form&quot;).click(function(){<br>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if( validatrix() ){<br>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;alert(&quot;Submit Form&quot;);<br>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}else{<br>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log(&quot;Some fields are required&quot;);<br>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
-				&nbsp;&nbsp;&nbsp;return false; //Prevent form submition<br>
-				&nbsp;&nbsp;&nbsp;});<br>
-				});<br>
+				&lt;script&gt;
+				  $(function(){
+				    $(&quot;#submit-form&quot;).click(function(){
+				      if( validatrix() ){
+				        alert(&quot;Submit Form&quot;);
+				      }else{
+				        console.log(&quot;Some fields are required&quot;);
+				      }
+				      return false; //Prevent form submition
+				    });
+				  });
 				&lt;/script&gt;
 				</code>
+				</pre>
 
-	      		<h4>HTML Form layout example - IMPORTANT:</h4>
+	      		<h3>HTML Form layout example - IMPORTANT:</h3>
 	      		<p>
 You need wrap every form element with a <span class="label label-default">&lt;div&gt;</span> tag for a good performance. The script (for now) only works with this specific form layout:</p>
-				<code>
-					&lt;form&gt; <br>
-						&nbsp;&nbsp; &lt;!-- text --&gt;<br>
-						&nbsp;&nbsp; &lt;div&gt; <br>
-						&nbsp;&nbsp;&nbsp;&nbsp;  &lt;input type=&quot;text&quot; class=&quot;required&quot;&gt; <br>
-						&nbsp;&nbsp; &lt;/div&gt; <br>
-
-						&nbsp;&nbsp; &lt;!-- select --&gt; <br>
-							&nbsp;&nbsp;&nbsp;&nbsp; &lt;div&gt; <br>
-								&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &lt;select class=&quot;required&quot;&gt; <br>
-									&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &lt;option&gt;option 1&lt;/option&gt; <br>
-									&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &lt;option&gt;option 2&lt;/option&gt; <br>
-							&nbsp;&nbsp;&nbsp;&nbsp; &lt;/select&gt; <br>
-						&nbsp;&nbsp; &lt;/div&gt; <br>
-
-						&nbsp;&nbsp; &lt;!-- radios &amp; checkboxes --&gt; <br>
-						
-						&nbsp;&nbsp; &lt;div&gt; <br>
-							&nbsp;&nbsp;&nbsp;&nbsp; &lt;label&gt; <br>
-								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;input type=&quot;radio&quot; class=&quot;required&quot; /&gt; Option 1 <br>
-							&nbsp;&nbsp;&nbsp;&nbsp; &lt;/label&gt; <br>
-							&nbsp;&nbsp;&nbsp;&nbsp; &lt;label&gt; <br>
-								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;input type=&quot;radio&quot; class=&quot;required&quot; /&gt; Option 2 <br>
-							&nbsp;&nbsp;&nbsp;&nbsp; &lt;/label&gt;<br>
-						&nbsp;&nbsp; &lt;/div&gt; <br>
-
-
-						&nbsp;&nbsp; &lt;!-- ... --&gt; <br>
-					&lt;/form&gt;
+				<pre><code class="language-php">
+				&lt;form&gt; 
+				  &lt;!-- text --&gt;
+				  &lt;div&gt; 
+				    &lt;input type=&quot;text&quot; class=&quot;required&quot;&gt; 
+				  &lt;/div&gt; 
+  				
+				  &lt;!-- select --&gt; 
+				  &lt;div&gt; 
+				    &lt;select class=&quot;required&quot;&gt; 
+				      &lt;option&gt;option 1&lt;/option&gt; 
+				      &lt;option&gt;option 2&lt;/option&gt; 
+				    &lt;/select&gt; 
+				  &lt;/div&gt; 
+  				
+				  &lt;!-- radios &amp; checkboxes --&gt; 
+				  &lt;div&gt; 
+				    &lt;label&gt; 
+				      &lt;input type=&quot;radio&quot; class=&quot;required&quot; /&gt; Option 1 
+				    &lt;/label&gt; 
+				    &lt;label&gt; 
+				      &lt;input type=&quot;radio&quot; class=&quot;required&quot; /&gt; Option 2 
+				    &lt;/label&gt;
+				  &lt;/div&gt; 
+				  
+				  &lt;!-- ... --&gt; 
+				&lt;/form&gt;
 				</code>
+				</pre>
 
-	      		<h4>Custom warnings</h4>
+	      		<h3>Custom warnings</h3>
 	      		<p>You can edit the warning values in the file <span class="label label-default">validatrix.js</span></p>
-				<code>
-				var warnings = {<br>
-					&nbsp;&nbsp;&nbsp;&nbsp;text : '*This text field is required',<br>
-					&nbsp;&nbsp;&nbsp;&nbsp;textarea: '*This textarea is required',<br>
-					&nbsp;&nbsp;&nbsp;&nbsp;select: '*Select an option',<br>
-					&nbsp;&nbsp;&nbsp;&nbsp;radio: '*Select a radio option',<br>
-					&nbsp;&nbsp;&nbsp;&nbsp;checkbox: '*Check one option'<br>
+				<pre><code class="language-php">
+				var warnings = {
+				    text : '*This text field is required',
+				    textarea: '*This textarea is required',
+				    select: '*Select an option',
+				    radio: '*Select a radio option',
+				    checkbox: '*Check one option'
 				};
 				</code>
+				</pre>
 	        </div>
 
 
@@ -162,10 +161,10 @@ You need wrap every form element with a <span class="label label-default">&lt;di
 
 	    </div>
 	</div>
-	<br>
-	<br>
-	<br>
-	<br>
+	<br><br><br>
+	
+	
+	
 
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

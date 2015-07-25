@@ -63,6 +63,40 @@
 				&lt;/script&gt;
 				</code>
 
+	      		<h4>HTML Form layout example - IMPORTANT:</h4>
+	      		<p>
+You need wrap every form element with a <span class="label label-default">&lt;div&gt;</span> tag for a good performance. The script (for now) only works with this specific form layout:</p>
+				<code>
+					&lt;form&gt; <br>
+						&nbsp;&nbsp; &lt;!-- text --&gt;<br>
+						&nbsp;&nbsp; &lt;div&gt; <br>
+						&nbsp;&nbsp;&nbsp;&nbsp;  &lt;input type=&quot;text&quot; class=&quot;required&quot;&gt; <br>
+						&nbsp;&nbsp; &lt;/div&gt; <br>
+
+						&nbsp;&nbsp; &lt;!-- select --&gt; <br>
+							&nbsp;&nbsp;&nbsp;&nbsp; &lt;div&gt; <br>
+								&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &lt;select class=&quot;required&quot;&gt; <br>
+									&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &lt;option&gt;option 1&lt;/option&gt; <br>
+									&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &lt;option&gt;option 2&lt;/option&gt; <br>
+							&nbsp;&nbsp;&nbsp;&nbsp; &lt;/select&gt; <br>
+						&nbsp;&nbsp; &lt;/div&gt; <br>
+
+						&nbsp;&nbsp; &lt;!-- radios &amp; checkboxes --&gt; <br>
+						
+						&nbsp;&nbsp; &lt;div&gt; <br>
+							&nbsp;&nbsp;&nbsp;&nbsp; &lt;label&gt; <br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;input type=&quot;radio&quot; class=&quot;required&quot; /&gt; Option 1 <br>
+							&nbsp;&nbsp;&nbsp;&nbsp; &lt;/label&gt; <br>
+							&nbsp;&nbsp;&nbsp;&nbsp; &lt;label&gt; <br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;input type=&quot;radio&quot; class=&quot;required&quot; /&gt; Option 2 <br>
+							&nbsp;&nbsp;&nbsp;&nbsp; &lt;/label&gt;<br>
+						&nbsp;&nbsp; &lt;/div&gt; <br>
+
+
+						&nbsp;&nbsp; &lt;!-- ... --&gt; <br>
+					&lt;/form&gt;
+				</code>
+
 	      		<h4>Custom warnings</h4>
 	      		<p>You can edit the warning values in the file <span class="label label-default">validatrix.js</span></p>
 				<code>

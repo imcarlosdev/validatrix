@@ -3,11 +3,12 @@ Brought to you by Carlos Maldonado - @choquo
 This script is open source
 License: MIT
 */
-function validatrix(){
+function validatrix(element){
+
 	//Messages
 	var warnings = {
-		text : '*This text field is required',
-		textarea: '*This textarea is required',
+		text : '*This field is required',
+		textarea: '*This field is required',
 		select: '*Select an option',
 		radio: '*Select a radio option',
 		checkbox: '*Check one option'
@@ -17,7 +18,8 @@ function validatrix(){
 	//Remove old warnings
 	$(".required-label").remove();
 	$("input").removeClass('required-ignore-multi');
-	$(".required").each(function(){
+	element.find(".required").each(function(){
+
 		var myself = $(this);
 
 		//text

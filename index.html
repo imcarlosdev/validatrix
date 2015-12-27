@@ -15,7 +15,7 @@
 	<script>
 	    $(function(){
 	        $("#submit-form").click(function(){
-	        	if( validatrix() ){
+	        	if( validatrix( $("#contact-form") ) ){
 	        		alert("Submit Form");
 
 	        	}else{
@@ -50,7 +50,7 @@
 				&lt;script&gt;
 				  $(function(){
 				    $(&quot;#submit-form&quot;).click(function(){
-				      if( validatrix() ){
+				      if( validatrix( $("#contact-form") ) ){
 				        alert(&quot;Submit Form&quot;);
 				      }else{
 				        console.log(&quot;Some fields are required&quot;);

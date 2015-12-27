@@ -67,6 +67,7 @@ The script (for now) only works with this specific form layout:
 You can edit the warning values in the file `validatrix.js`
 
 	var warnings = {
+	  text : '*Please enter a valid email address',
 	  text : '*This text field is required',
 	  textarea: '*This textarea is required',
 	  select: '*Select an option',

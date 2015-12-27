@@ -20,7 +20,7 @@ Include the validatrix script, the script requires jQuery
 	<script>
 	$(function(){
 	   $("#submit-form").click(function(){
-	     if( validatrix( $("#contact-form") ) ){
+	     if( validatrix( $("#contact-form") ) ){ //Send the object to the function for validate individually
 	       alert("Submit Form");
 	       }else{
 	       console.log("Some fields are required");

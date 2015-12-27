@@ -7,6 +7,7 @@ function validatrix(element){
 
 	//Messages
 	var warnings = {
+		email : "Please enter a valid email",
 		text : '*This field is required',
 		textarea: '*This field is required',
 		select: '*Select an option',
@@ -25,6 +26,16 @@ function validatrix(element){
 		//text
 		if( myself.prop("type").toLowerCase() === 'text' && myself.val()==='' ){
 			myself.after('<div class="required-label">'+warnings.text+'</div>').addClass('required-active');
+			validate = false;
+		}
+
+		//email
+		if( 
+			myself.prop("type").toLowerCase() === 'email' && myself.val()==='' || 
+			myself.prop("type").toLowerCase() === 'email' && (myself.val().indexOf('@', 0) == -1 || myself.val().indexOf('.', 0) == -1) 
+		){
+
+			myself.after('<div class="required-label">'+warnings.email+'</div>').addClass('required-active');
 			validate = false;
 		}
 		

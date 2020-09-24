@@ -1,12 +1,12 @@
-#Validatrix 
-####A simple lightweight form validation script based on javascript / jquery
+# Validatrix 
+#### A simple lightweight form validation script based on javascript / jquery
 Just include the script & css and add the class `.required` to your required fields that's all, just 2kb.
 
-**[View Demo](http://develus.com/github/validatrix)**
+**[View Demo](http://develus.com/_github/validatrix)**
 
-![](http://develus.com/github/validatrix/assets/img/capture.png)
+![](http://develus.com/_github/validatrix/assets/img/capture.png)
 
-##How to use
+## How to use
 Add class `.required` to your required fields
     
 	<input class="required" name="" />
@@ -30,7 +30,7 @@ Include the validatrix script, the script requires jQuery
 	});
 	</script> 
 
-####HTML Form layout example - IMPORTANT:
+#### HTML Form layout example - IMPORTANT:
 You need wrap every form element with a `<div>` tag for a good performance.
 The script (for now) only works with this specific form layout:
 	
@@ -62,7 +62,7 @@ The script (for now) only works with this specific form layout:
 
 
 
-###Custom warnings
+### Custom warnings
 
 You can edit the warning values in the file `validatrix.js`
 
